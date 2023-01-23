@@ -15,12 +15,12 @@ end
 
 puts "Creating Rooms..."
 100.times do
-Room.create(beds: Faker::Number.between(from:1, to:3),kitchenette?:Faker::Boolean.boolean, client_id: Client.all.sample, hotel_id: Hotel.all.sample, reservations_id: Reservation.all.sample)
+Room.create(beds: Faker::Number.between(from:1, to:3),kitchenette?:Faker::Boolean.boolean)
 end
 
 puts "Creating Reservations..."
 20.times do
-    Reservation.create(date:Faker::Date.forward(days:365), length_of_stay: Faker::Number.digit, client_id: Client.all.sample,hotel_id: Hotel.all.sample)
+    Reservation.create(date:Faker::Date.forward(days:365), length_of_stay: Faker::Number.digit, client: Client.all.sample,hotel: Hotel.all.sample, room: Room.all.sample)
 end
 
 puts "Seeding Complete..."
