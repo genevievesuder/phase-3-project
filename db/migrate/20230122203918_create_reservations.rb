@@ -5,7 +5,7 @@ class CreateReservations < ActiveRecord::Migration[5.2]
       t.integer :length_of_stay
       t.belongs_to :client
       t.belongs_to :hotel
-
+      t.belongs_to :room
       t.timestamps
     end
   end

@@ -33,23 +33,19 @@ ActiveRecord::Schema.define(version: 2023_01_22_205134) do
     t.integer "length_of_stay"
     t.integer "client_id"
     t.integer "hotel_id"
+    t.integer "room_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["client_id"], name: "index_reservations_on_client_id"
     t.index ["hotel_id"], name: "index_reservations_on_hotel_id"
+    t.index ["room_id"], name: "index_reservations_on_room_id"
   end
 
   create_table "rooms", force: :cascade do |t|
     t.string "beds"
     t.boolean "kitchenette?"
-    t.integer "client_id"
-    t.integer "hotel_id"
-    t.integer "reservations_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["client_id"], name: "index_rooms_on_client_id"
-    t.index ["hotel_id"], name: "index_rooms_on_hotel_id"
-    t.index ["reservations_id"], name: "index_rooms_on_reservations_id"
   end
 
 end
