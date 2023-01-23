@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_22_205134) do
+ActiveRecord::Schema.define(version: 2023_01_23_232055) do
+
+  create_table "amenities", force: :cascade do |t|
+    t.string "name"
+    t.text "icon_img"
+    t.text "image_url"
+    t.text "description"
+    t.integer "hotel_id"
+    t.index ["hotel_id"], name: "index_amenities_on_hotel_id"
+  end
 
   create_table "hotels", force: :cascade do |t|
     t.string "name"
