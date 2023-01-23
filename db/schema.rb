@@ -12,18 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2023_01_22_205134) do
 
-<<<<<<< HEAD
-=======
-  create_table "clients", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "email"
-    t.integer "phone_number"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
->>>>>>> 272fc89b491e845fa38eaa866ca7a1a190e6d790
   create_table "hotels", force: :cascade do |t|
     t.string "name"
     t.string "address"
@@ -34,7 +22,6 @@ ActiveRecord::Schema.define(version: 2023_01_22_205134) do
   create_table "reservations", force: :cascade do |t|
     t.datetime "date"
     t.integer "length_of_stay"
-<<<<<<< HEAD
     t.integer "discount", default: 0
     t.float "final_price"
     t.integer "user_id"
@@ -43,22 +30,11 @@ ActiveRecord::Schema.define(version: 2023_01_22_205134) do
     t.datetime "updated_at", null: false
     t.index ["room_id"], name: "index_reservations_on_room_id"
     t.index ["user_id"], name: "index_reservations_on_user_id"
-=======
-    t.integer "client_id"
-    t.integer "hotel_id"
-    t.integer "room_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["client_id"], name: "index_reservations_on_client_id"
-    t.index ["hotel_id"], name: "index_reservations_on_hotel_id"
-    t.index ["room_id"], name: "index_reservations_on_room_id"
->>>>>>> 272fc89b491e845fa38eaa866ca7a1a190e6d790
   end
 
   create_table "rooms", force: :cascade do |t|
     t.string "beds"
     t.boolean "kitchenette?"
-<<<<<<< HEAD
     t.integer "hotel_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -71,8 +47,6 @@ ActiveRecord::Schema.define(version: 2023_01_22_205134) do
     t.string "email"
     t.string "phone_number"
     t.integer "role", default: 0
-=======
->>>>>>> 272fc89b491e845fa38eaa866ca7a1a190e6d790
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
