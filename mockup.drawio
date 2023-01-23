@@ -1,5 +1,40 @@
 <mxfile host="65bd71144e">
     <diagram id="ZBDoaTCFzI2SnacVg3Go" name="Page-1">
+<<<<<<< HEAD
+        <mxGraphModel dx="1229" dy="407" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="8" value="Hotel" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="280" y="20" width="215" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="has_many rooms&lt;br&gt;has_many reservations, through: rooms&lt;br&gt;has_many clients, through reservations" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="8" vertex="1">
+                    <mxGeometry x="-15" y="20" width="230" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="Reservations" style="swimlane;whiteSpace=wrap;html=1;startSize=20;" parent="1" vertex="1">
+                    <mxGeometry x="280.75" y="230" width="213.5" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="belongs_to client&lt;br&gt;belongs_to room" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="10" vertex="1">
+                    <mxGeometry x="45" y="30" width="110" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="clients" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="140" width="240" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="has_many reservations&lt;br&gt;has_many rooms, through reservations" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="180" width="230" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="Rooms" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="494.25" y="140" width="175.75" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="belongs_to hotel" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="21">
+                    <mxGeometry y="30" width="175.75" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="has_many reservations" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="21">
+                    <mxGeometry y="60" width="175.75" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="has_many clients, through reservations" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="21">
+                    <mxGeometry y="90" width="175.75" height="30" as="geometry"/>
+=======
         <mxGraphModel dx="2052" dy="364" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
@@ -21,6 +56,7 @@
                 </mxCell>
                 <mxCell id="13" value="has_many reservations&lt;br&gt;belongs_to hotel" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="12">
                     <mxGeometry x="25" y="30" width="150" height="40" as="geometry"/>
+>>>>>>> 272fc89b491e845fa38eaa866ca7a1a190e6d790
                 </mxCell>
             </root>
         </mxGraphModel>
