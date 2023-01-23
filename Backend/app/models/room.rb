@@ -1,5 +1,6 @@
 class Room < ActiveRecord::Base
     belongs_to :hotel
-    belongs_to :client
-    belongs_to :reservation
+    has_many :reservations
+    has_many :client, through: :reservations
+
 end

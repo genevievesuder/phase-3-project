@@ -1,4 +1,5 @@
 class Client < ActiveRecord::Base
-    has_many :Reservations
     belongs_to :hotel
+    has_many :reservations
+    has_many :rooms, through: :reservations
 end

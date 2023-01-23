@@ -6,7 +6,7 @@ Reservation.destroy_all
 
 puts "Creating Hotel..."
 
-Hotel.create(name: "Hotel Transylvania", address: Faker::Address.full_address)
+h = Hotel.create(name: "Hotel Transylvania", address: Faker::Address.full_address)
 
 puts "Creating Clients..."
 25.times do
@@ -20,8 +20,7 @@ end
 
 puts "Creating Reservations..."
 20.times do
-    Reservation.create(date:Faker::Date.forward(days:365), length_of_stay: Faker::Number.digit, client: Client.all.sample,hotel: Hotel.all.sample, room: Room.all.sample)
+    Reservation.create(date:Faker::Date.forward(days:365), length_of_stay: Faker::Number.digit, client: Client.all.sample, hotel: h, room: Room.all.sample)
 end
 
 puts "Seeding Complete..."
-
