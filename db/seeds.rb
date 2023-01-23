@@ -16,6 +16,7 @@ end
 puts "Creating Rooms..."
 4.times do
 Room.create(beds: Faker::Number.between(from:1, to:3),kitchenette?:Faker::Boolean.boolean, hotel: h)
+
 end
 
 puts "Creating Reservations..."
@@ -24,3 +25,4 @@ puts "Creating Reservations..."
 end
 
 puts "Seeding Complete..."
+

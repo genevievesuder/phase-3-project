@@ -4,7 +4,7 @@ class CreateRooms < ActiveRecord::Migration[5.2]
       t.string :beds
       t.boolean :kitchenette?
       t.belongs_to :hotel
-      
+
       t.timestamps
     end
   end
