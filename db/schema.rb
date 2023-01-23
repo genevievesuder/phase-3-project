@@ -44,8 +44,10 @@ ActiveRecord::Schema.define(version: 2023_01_22_205134) do
   create_table "rooms", force: :cascade do |t|
     t.string "beds"
     t.boolean "kitchenette?"
+    t.integer "hotel_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["hotel_id"], name: "index_rooms_on_hotel_id"
   end
 
 end

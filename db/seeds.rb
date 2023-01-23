@@ -15,7 +15,7 @@ end
 
 puts "Creating Rooms..."
 100.times do
-Room.create(beds: Faker::Number.between(from:1, to:3),kitchenette?:Faker::Boolean.boolean)
+Room.create(beds: Faker::Number.between(from:1, to:3),kitchenette?:Faker::Boolean.boolean, hotel: h)
 end
 
 puts "Creating Reservations..."
