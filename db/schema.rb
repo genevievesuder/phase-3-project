@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 2023_01_23_232055) do
   create_table "rooms", force: :cascade do |t|
     t.string "beds"
     t.boolean "kitchenette?"
+    t.text "image_url"
     t.integer "hotel_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
