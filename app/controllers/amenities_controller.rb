@@ -16,6 +16,12 @@ class AmenitiesController < ApplicationController
 
   # GET: /amenities/5
   get "/amenities/:id" do
+    amenitie = Amenitie.find_by(id: params["id"])
+    if amenitie 
+      amenitie.to_json(except: [:created_at, :updated_at])
+    else 
+      "Couldn't find amenitie with id #{params["id"]}."
+    end
   end
 
   # GET: /amenities/5/edit

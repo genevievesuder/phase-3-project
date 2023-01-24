@@ -16,6 +16,12 @@ class RoomsController < ApplicationController
 
   # GET: /rooms/5
   get "/rooms/:id" do
+    room = Room.find_by(id: params["id"])
+    if room 
+      room.to_json(except: [:created_at, :updated_at])
+    else 
+      "Couldn't find room with id #{params["id"]}."
+    end
   end
 
   # GET: /rooms/5/edit
