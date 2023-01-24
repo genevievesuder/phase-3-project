@@ -1,5 +1,7 @@
 class ReservationsController < ApplicationController
 
+  
+
   # GET: /reservations
   get "/reservations" do
     Reservation.all.to_json(except: [:created_at, :updated_at])
