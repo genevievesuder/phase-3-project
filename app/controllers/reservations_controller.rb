@@ -4,7 +4,7 @@ class ReservationsController < ApplicationController
 
   # GET: /reservations
   get "/reservations" do
-    Reservation.all.to_json(except: [:created_at, :updated_at])
+    Reservation.all.to_json(include: [:users], except: [:created_at, :updated_at])
     
   end
 
@@ -14,7 +14,9 @@ class ReservationsController < ApplicationController
 
   # POST: /reservations
   post "/reservations" do
-    redirect "/reservations"
+    # redirect "/reservations"
+    # Reservation.create("date: #{params["date"]}", first_name:  )
+
   end
 
   # GET: /reservations/5
