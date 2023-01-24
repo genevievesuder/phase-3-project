@@ -17,6 +17,12 @@ class ReservationsController < ApplicationController
 
   # GET: /reservations/5
   get "/reservations/:id" do
+    reservation = Reservation.find_by(id: params["id"])
+    if reservation 
+      reservation.to_json(except: [:created_at, :updated_at])
+    else 
+      "Couldn't find reservation with id #{params["id"]}."
+    end
   end
 
   # GET: /reservations/5/edit
