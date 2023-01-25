@@ -13,16 +13,23 @@ class ReservationsController < ApplicationController
 
   # POST: /reservations
   post "/reservations" do
-    # redirect "/reservations"
-    # user = {}
-    Reservation.create(
-      
+
+    user = User.where(first_name: params[:first_name], last_name: params[:last_name]).first
+    user_id = user ? user.id : 1
+
+    r = Reservation.create(
       check_in: params["check_in"], 
       check_out: params["check_out"], 
-      user_id: "1", 
+      user_id: user_id, 
       room_id: params["room_id"]
     )
   
+    if r.id 
+      halt 201, {reservation: r}.to_json
+    else
+      halt 400, {message: r.errors.full_messages.to_sentence}.to_json
+    end
+
   end
 
   # GET: /reservations/5
