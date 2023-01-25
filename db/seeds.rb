@@ -17,22 +17,26 @@ end
 puts "Creating Rooms..."
 
 r1 = Room.create(
-    beds: "1 Queen bed",
+    room_name:"The Aegean",
+    bed_size: "1 Queen bed",
     kitchenette?:false, 
     hotel: h, 
     image_url: "https://cache.marriott.com/content/dam/marriott-renditions/ROMDU/romdu-junior-suite-3205-hor-wide.jpg?output-quality=70&interpolation=progressive-bilinear&downsize=1336px:*")
 r2 = Room.create(
-    beds: "2 Queen beds",
+    room_name:"The Cerulean",
+    bed_size: "2 Queen beds",
     kitchenette?:false, 
     hotel: h, 
     image_url: "https://www.elliotparkhotel.com/wp-content/uploads/2018/05/double-queen-eph-01.jpg")
 r3 = Room.create(
-    beds: "1 King bed",
+    room_name: "The Sapphire",
+    bed_size: "1 King bed",
     kitchenette?:true, 
     hotel: h, 
     image_url:"https://media.cntraveler.com/photos/5b7c5b40bc61001ecb8c9e3e/16:9/w_1600,c_limit/Renaissance-Montre%CC%81al_2018_Guestroom_Standard_King_4520.jpg")
 r4 = Room.create(
-    beds: "California King bed", 
+    room_name: "The Lapis Lazuli Suite",
+    bed_size: "California King bed", 
     kitchenette?:true, 
     hotel: h, 
     image_url: "https://cdn.decorilla.com/images/927w/894ad83d-ce06-439a-86b1-7d06de949f2a/Boutique-Hotel-Bedroom-Bathroom-Mladen-C-3DModel-1.jpg?cv=1")
@@ -41,7 +45,11 @@ r4 = Room.create(
 
 puts "Creating Reservations..."
 20.times do
-    Reservation.create(date:Faker::Date.forward(days:365), length_of_stay: Faker::Number.digit, user: User.all.sample, room: Room.all.sample)
+    Reservation.create(
+        check_in: Faker::Date.between(from:Date.today, to: "2023-02-01" ),
+        check_out: Faker::Date.between(to: "2023-02-02", from: "2023-03-01" ), 
+        user: User.all.sample, 
+        room: Room.all.sample)
 end
 
     a1 = Amenitie.create(
