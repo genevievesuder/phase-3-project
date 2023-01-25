@@ -2,8 +2,9 @@ class ReservationsController < ApplicationController
 
   # GET: /reservations
   get "/reservations" do
-    Reservation.all.to_json(include: [:users, :room], except: [:created_at, :updated_at])
-    
+    Reservation.all.to_json(include: [:user, :room], except: [:created_at, :updated_at])
+
+  
   end
 
   # GET: /reservations/new
