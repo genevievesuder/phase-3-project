@@ -14,8 +14,15 @@ class ReservationsController < ApplicationController
   # POST: /reservations
   post "/reservations" do
     # redirect "/reservations"
-    # Reservation.create("date: #{params["date"]}", first_name:  )
-
+    # user = {}
+    Reservation.create(
+      
+      check_in: params["check_in"], 
+      check_out: params["check_out"], 
+      user_id: "1", 
+      room_id: params["room_id"]
+    )
+  
   end
 
   # GET: /reservations/5
