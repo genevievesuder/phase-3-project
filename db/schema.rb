@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(version: 2023_01_23_232055) do
   end
 
   create_table "reservations", force: :cascade do |t|
-    t.datetime "date"
-    t.integer "length_of_stay"
+    t.date "check_in"
+    t.date "check_out"
     t.integer "discount", default: 0
     t.float "final_price"
     t.integer "user_id"
@@ -42,7 +42,8 @@ ActiveRecord::Schema.define(version: 2023_01_23_232055) do
   end
 
   create_table "rooms", force: :cascade do |t|
-    t.string "beds"
+    t.string "room_name"
+    t.string "bed_size"
     t.boolean "kitchenette?"
     t.text "image_url"
     t.integer "hotel_id"
