@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
     user = User.find_by_email(params[:email])
    if user&.authenticate(params[:password])
          session[:user_id] = user.id
-         halt 200, {user: user}.to_json
+         halt 200, {user: user}.to_json(include: [:reservations])
  else
          halt 400, {message: "Invalid credentials!"}.to_json
    end
