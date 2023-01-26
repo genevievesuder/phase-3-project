@@ -15,8 +15,22 @@ class ReservationsController < ApplicationController
 
   # POST: /reservations
   post "/reservations" do
-    # redirect "/reservations"
-    # Reservation.create("date: #{params["date"]}", first_name:  )
+
+    user = User.where(first_name: params[:first_name], last_name: params[:last_name]).first
+    user_id = user ? user.id : 1
+
+    r = Reservation.create(
+      check_in: params["check_in"], 
+      check_out: params["check_out"], 
+      user_id: user_id, 
+      room_id: params["room_id"]
+    )
+  
+    if r.id 
+      halt 201, {reservation: r}.to_json
+    else
+      halt 400, {message: r.errors.full_messages.to_sentence}.to_json
+    end
 
   end
 
@@ -40,7 +54,29 @@ class ReservationsController < ApplicationController
   end
 
   # DELETE: /reservations/5/delete
-  delete "/reservations/:id/delete" do
-    redirect "/reservations"
+
+  delete '/reservations/:id' do
+    # find the review using the ID
+    reservation = Reservation.find_by(id:params[:id])
+    # delete the review
+    if reservation 
+    reservation.destroy
+    # send a response with the deleted review as JSON
+    halt 200, "reservation canceled".to_json
+    else
+    halt 400, "No ID found.".to_json
+    end
   end
+
+  # delete "/reservations/:id/delete" do
+  #   reservation = Reservation.find_by(id: params["reservationId.id"])
+  #   reservation.delete
+
+
+
+  # #   def delete_reviews restaurant
+  # #     self.reviews.where(restaurant:restaurant).delete_all
+  # # end
+
+  # end
 end

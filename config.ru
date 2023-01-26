@@ -17,6 +17,7 @@ use RoomsController
 use UsersController
 use AmenitiesController
 use ReservationsController
+use SessionsController
 #use controllers.. will add later. order does matter.
 
 
