@@ -7,12 +7,22 @@ class UsersController < ApplicationController
 
   # GET: /users/new
   get "/users/new" do
-    
+ 
   end
 
   # POST: /users
   post "/users" do
-    redirect "/users"
+
+      new_user = User.create(first_name: params[:username], email: params[:email], password: params[:password], password_confirmation: params[:password_confirmation])
+
+      if new_user.id 
+        halt 201, {user: new_user}.to_json
+      else
+        halt 400, {message: new_user.errors.full_messages.to_sentence}.to_json
+      end
+  
+    
+
   end
 
   # GET: /users/5
