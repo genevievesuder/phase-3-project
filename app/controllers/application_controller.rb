@@ -18,8 +18,8 @@ class ApplicationController < Sinatra::Base
     end
  end
 
-  get "/" do
-    "<h2>Hello World!</h2>"
-  end
+  # get "/" do
+  #   "<h2>Hello World!</h2>"
+  # end
 
 end

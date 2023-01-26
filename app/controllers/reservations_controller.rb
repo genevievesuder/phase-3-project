@@ -52,7 +52,25 @@ class ReservationsController < ApplicationController
   end
 
   # DELETE: /reservations/5/delete
-  delete "/reservations/:id/delete" do
-    redirect "/reservations"
+
+  delete '/reservations/:id/delete' do
+    # find the review using the ID
+    reservation = Reservation.find_by(id:params["reservationId.id"])
+    # delete the review
+    reservation.destroy
+    # send a response with the deleted review as JSON
+    reservation.to_json
   end
+
+  # delete "/reservations/:id/delete" do
+  #   reservation = Reservation.find_by(id: params["reservationId.id"])
+  #   reservation.delete
+
+
+
+  # #   def delete_reviews restaurant
+  # #     self.reviews.where(restaurant:restaurant).delete_all
+  # # end
+
+  # end
 end
