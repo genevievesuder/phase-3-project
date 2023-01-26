@@ -53,13 +53,17 @@ class ReservationsController < ApplicationController
 
   # DELETE: /reservations/5/delete
 
-  delete '/reservations/:id/delete' do
+  delete '/reservations/:id' do
     # find the review using the ID
-    reservation = Reservation.find_by(id:params["reservationId.id"])
+    reservation = Reservation.find_by(id:params[:id])
     # delete the review
+    if reservation 
     reservation.destroy
     # send a response with the deleted review as JSON
-    reservation.to_json
+    halt 200, "reservation canceled".to_json
+    else
+    halt 400, "No ID found.".to_json
+    end
   end
 
   # delete "/reservations/:id/delete" do
