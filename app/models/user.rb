@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
     # password_confirmation authenticate - add later
 
     validates :email, presence: true, uniqueness: true 
-    validates :username, presence: true, length: {in: 4..25}
+    validates :first_name, presence: true
     validates :password, length: {in: 6..25}
 
 end
