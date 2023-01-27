@@ -48,7 +48,20 @@ class ReservationsController < ApplicationController
 
   # PATCH: /reservations/5
   patch "/reservations/:id" do
-    redirect "/reservations/:id"
+    reservation = Reservation.find(params[:id])
+    reservation.update(
+      check_in: params["check_in"], 
+      check_out: params["check_out"], 
+      # user_id: self.id, 
+      room_id: params["room_id"]
+    )
+    if reservation.id 
+      halt 200, {reservation: reservation}.to_json
+    else
+      halt 400, {message: reservation.errors.full_messages.to_sentence}.to_json
+    end
+
+    # reservation.to_json
   end
 
   # DELETE: /reservations/5/delete
